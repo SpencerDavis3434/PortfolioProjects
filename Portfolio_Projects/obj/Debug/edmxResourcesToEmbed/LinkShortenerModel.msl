@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LinkShortenerModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="LinkConverters">
+      <EntityTypeMapping TypeName="LinkShortenerModel.LinkConverter">
+        <MappingFragment StoreEntitySet="LinkConverter">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="LongLink" ColumnName="LongLink" />
+          <ScalarProperty Name="ShortLinkExtension" ColumnName="ShortLinkExtension" />
+          <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

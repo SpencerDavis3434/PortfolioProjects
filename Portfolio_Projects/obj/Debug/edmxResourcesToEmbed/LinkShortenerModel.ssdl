@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LinkShortenerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="LinkConverter">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LongLink" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ShortLinkExtension" Type="nvarchar" MaxLength="7" Nullable="false" />
+    <Property Name="ExpirationDate" Type="datetime" />
+  </EntityType>
+  <EntityContainer Name="LinkShortenerModelStoreContainer">
+    <EntitySet Name="LinkConverter" EntityType="Self.LinkConverter" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

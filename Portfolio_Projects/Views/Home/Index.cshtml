@@ -1,0 +1,32 @@
+﻿@model Portfolio_Projects.Models.LinkShortenerModel
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div class="row col-md-12">
+    <div class="col-md-4">
+        @using (Html.BeginForm(FormMethod.Post))
+        {
+            <div class="col-md-12">
+                <p>Enter full link to be shortened:</p>
+                @Html.TextBoxFor(l=>l.LongLink, new { @id = "longLink" })
+
+                <p><div style="color:red;">[OPTIONAL]</div> Enter an expiration date for your link:</p>
+                @Html.TextBoxFor(l=>l.ExpirationDate, new { @id = "datepicker"})
+
+                <input type="submit" value="Submit" />
+            </div>
+        }
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#datepicker").datepicker
+            ({ minDate: "+1D", changeMonth: true, changeYear: true });
+
+    });
+
+
+</script>
